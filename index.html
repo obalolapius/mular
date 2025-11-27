@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>MularConstruct – Modern Construction & Building Solutions</title>
+  <meta
+    name="description"
+    content="MularConstruct delivers reliable construction, renovation, and project management services. Quality builds, on time and on budget."
+  />
+  <meta
+    name="keywords"
+    content="MularConstruct, construction company, building contractors, renovation, civil engineering, project management"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary: #0f5c8c;
+      --primary-light: #1779b6;
+      --accent: #f6b10a;
+      --dark: #111827;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --bg: #f3f4f6;
+      --white: #ffffff;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-soft: 0 20px 40px rgba(15, 27, 45, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(
+          circle at top left,
+          rgba(246, 177, 10, 0.08),
+          transparent 55%
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(23, 121, 182, 0.08),
+          transparent 55%
+        ),
+        #f9fafb;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.4rem;
+      box-shadow: 0 8px 18px rgba(15, 92, 140, 0.35);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 1.05rem;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .header-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 92, 140, 0.22);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      color: var(--primary);
+      font-weight: 500;
+      box-shadow: 0 6px 18px rgba(15, 92, 140, 0.12);
+      transition: all 0.18s ease-out;
+    }
+
+    .header-cta a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(15, 92, 140, 0.18);
+      border-color: var(--primary);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15, 92, 140, 0.06);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-bottom: 1.1rem;
+    }
+
+    .badge span.icon-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(246, 177, 10, 0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 3.2vw + 1rem, 3rem);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .hero h1 span.highlight {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 31rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-subtitle strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      box-shadow: 0 18px 32px rgba(15, 92, 140, 0.4);
+      transition: transform 0.15s ease-out, box-shadow 0.18s ease-out,
+        opacity 0.18s ease-out;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 40px rgba(15, 92, 140, 0.5);
+      opacity: 0.97;
+    }
+
+    .btn-text {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .btn-text span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 92, 140, 0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    /* Hero right / visual + form */
+    .hero-right {
+      position: relative;
+    }
+
+    .card-main {
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.4rem 1.6rem;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(15, 27, 45, 0.05);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.28);
+    }
+
+    .site-summary {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .site-summary code {
+      background: #f3f4f6;
+      padding: 0.1rem 0.35rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin: 0.8rem 0 1.1rem;
+    }
+
+    .stat-pill {
+      border-radius: var(--radius-md);
+      padding: 0.55rem 0.6rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      font-size: 0.75rem;
+    }
+
+    .stat-pill span.label {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .stat-pill span.value {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact-form {
+      margin-top: 0.4rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed #e5e7eb;
+    }
+
+    .contact-form p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      margin-bottom: 0.1rem;
+      color: var(--muted);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      padding: 0.5rem 0.6rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      outline: none;
+      transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+      background: #f9fafb;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(15, 92, 140, 0.12);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 54px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      margin-top: 0.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--white);
+      background: linear-gradient(135deg, #0ea5e9, #0f5c8c);
+      box-shadow: 0 12px 24px rgba(15, 92, 140, 0.45);
+      transition: transform 0.15s ease-out, box-shadow 0.2s ease-out;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 30px rgba(15, 92, 140, 0.5);
+    }
+
+    .btn-submit span.icon-plane {
+      font-size: 0.9rem;
+    }
+
+    .floating-tag {
+      position: absolute;
+      top: -12px;
+      right: 10px;
+      background: #111827;
+      color: #f9fafb;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.5);
+    }
+
+    .floating-tag span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    /* Services strip */
+    .services {
+      margin-top: 3.4rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 18px 40px rgba(15, 27, 45, 0.16);
+      padding: 1.5rem 1.3rem;
+      border: 1px solid rgba(15, 27, 45, 0.05);
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 2rem;
+    }
+
+    .services-intro h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+      color: var(--dark);
+    }
+
+    .services-intro p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .services-intro .mini-contact {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .services-intro .mini-contact a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      font-size: 0.82rem;
+    }
+
+    .service-item {
+      background: #f9fafb;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.7rem 0.8rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    .service-item h3 {
+      font-size: 0.86rem;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .service-item p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .service-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .service-label span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    footer {
+      margin-top: 2.8rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    footer .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      header {
+        margin-bottom: 2rem;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+        margin-top: 2.6rem;
+      }
+
+      .services-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 1.2rem 1rem 2.4rem;
+      }
+
+      .services-list {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="container">
+      <!-- Header -->
+      <header>
+        <div class="logo-wrap">
+          <div class="logo-icon">M</div>
+          <div class="logo-text">
+            <span>MularConstruct</span>
+            <span>Build. Restore. Deliver.</span>
+          </div>
+        </div>
+        <div class="header-cta">
+          <a href="#contact">Request a Site Visit</a>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <div class="badge">
+            <span class="icon-dot"></span>
+            Trusted construction partner for modern projects
+          </div>
+          <h1 id="hero-title">
+            Reliable
+            <span class="highlight">construction &amp; renovation</span>
+            across every stage of your project.
+          </h1>
+          <p class="hero-subtitle">
+            MularConstruct is a construction company focused on
+            <strong>structural integrity, cost transparency, and on‑time
+              delivery</strong>. From foundations to finishing, we manage the
+            work so you can focus on results.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">
+              Get a project quote
+              <span>→</span>
+            </a>
+            <button
+              type="button"
+              class="btn-text"
+              onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'});"
+            >
+              <span class="icon">?</span>
+              View core services
+            </button>
+          </div>
+
+          <div class="hero-meta" aria-label="Company highlights">
+            <div>
+              <strong>End‑to‑end delivery</strong>
+              From planning and permits to final inspection.
+            </div>
+            <div>
+              <strong>Clear communication</strong>
+              Email‑friendly updates and documented milestones.
+            </div>
+            <div>
+              <strong>Professional standards</strong>
+              Safety‑first, building‑code compliant work.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side card: summary + contact form -->
+        <div class="hero-right">
+          <div class="floating-tag">
+            <span class="dot"></span>
+            Quick response • Within 1 business day
+          </div>
+          <section
+            class="card-main"
+            aria-label="Project summary and contact form"
+          >
+            <div class="card-header">
+              <div>
+                <div class="card-title">MularConstruct at a glance</div>
+                <div class="card-tag">
+                  <span class="card-tag-dot"></span>
+                  Actively accepting new construction projects
+                </div>
+              </div>
+            </div>
+
+            <p class="site-summary">
+              Official website:
+              <code>mularconstruct.xyz</code><br />
+              A construction and building services company providing
+              planning, structural works, finishing, and maintenance.
+            </p>
+
+            <div class="stats-row" aria-label="Company quick facts">
+              <div class="stat-pill">
+                <span class="label">Focus</span>
+                <span class="value">Building &amp; renovation</span>
+              </div>
+              <div class="stat-pill">
+                <span class="label">Response</span>
+                <span class="value">&lt; 24 hours (email)</span>
+              </div>
+              <div class="stat-pill">
+                <span class="label">Location</span>
+                <span class="value">Serving regional &amp; urban sites</span>
+              </div>
+            </div>
+
+            <!-- Contact form -->
+            <div
+              id="contact"
+              class="contact-form"
+              aria-label="Contact MularConstruct"
+            >
+              <p>
+                Share a few details about your project. We will respond by
+                email with a clear next step and optional site visit date.
+              </p>
+
+              <form
+                action="https://example.com/contact"
+                method="post"
+                autocomplete="on"
+              >
+                <div class="form-grid">
+                  <div class="form-row-2">
+                    <div>
+                      <label for="name">Your full name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="e.g. John Doe"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label for="email">Business email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@company.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-row-2">
+                    <div>
+                      <label for="phone">Phone number</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+1 000 000 0000"
+                      />
+                    </div>
+                    <div>
+                      <label for="project-type">Project type</label>
+                      <select
+                        id="project-type"
+                        name="project_type"
+                        required
+                      >
+                        <option value="">Select one</option>
+                        <option value="new_build">
+                          New building construction
+                        </option>
+                        <option value="renovation">
+                          Renovation / remodeling
+                        </option>
+                        <option value="commercial">
+                          Commercial / industrial
+                        </option>
+                        <option value="maintenance">
+                          Maintenance &amp; repairs
+                        </option>
+                        <option value="other">Other construction work</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="location">Project location</label>
+                    <input
+                      type="text"
+                      id="location"
+                      name="location"
+                      placeholder="City / area"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="message">Short project description</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="Briefly describe the site, size, timeline, and what you would like us to build or renovate."
+                      required
+                    ></textarea>
+                    <p class="form-note">
+                      This form is for straightforward project enquiries only.
+                      No promotional content or unrelated messages.
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn-submit"
+                >
+                  <span class="icon-plane">✉</span>
+                  Send request to MularConstruct
+                </button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Services section -->
+      <section
+        id="services"
+        class="services"
+        aria-labelledby="services-title"
+      >
+        <div class="services-intro">
+          <h2 id="services-title">Construction services we provide</h2>
+          <p>
+            We handle complete building projects, targeted renovations, and
+            maintenance work for residential and commercial clients.
+          </p>
+          <p class="mini-contact">
+            Prefer direct contact?
+            <br />
+            Email:
+            <a href="mailto:info@mularconstruct.xyz">
+              info@mularconstruct.xyz
+            </a>
+            <br />
+            Phone:
+            <a href="tel:+18007654390">+1 800 765 4390</a>
+          </p>
+        </div>
+
+        <div class="services-list">
+          <article class="service-item">
+            <div class="service-label">
+              <span class="dot"></span>
+              Core construction
+            </div>
+            <h3>New builds &amp; structural works</h3>
+            <p>
+              Foundations, block work, concrete frames, roofing, and structural
+              systems designed around local codes and long‑term durability.
+            </p>
+          </article>
+
+          <article class="service-item">
+            <div class="service-label">
+              <span class="dot"></span>
+              Interior &amp; exterior
+            </div>
+            <h3>Finishing &amp; renovation</h3>
+            <p>
+              Remodeling, tiling, ceilings, painting, and façade upgrades that
+              modernize existing buildings without disrupting key operations.
+            </p>
+          </article>
+
+          <article class="service-item">
+            <div class="service-label">
+              <span class="dot"></span>
+              Management
+            </div>
+            <h3>Project &amp; site coordination</h3>
+            <p>
+              Clear timelines, documented progress, and coordinated trades so
+              your project stays within budget and ahead of key milestones.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div>
+          ©
+          <span id="year"></span>
+          MularConstruct. All rights reserved.
+        </div>
+        <div class="footer-contact">
+          <span>
+            Website:
+            <a href="https://mularconstruct.xyz">
+              https://mularconstruct.xyz
+            </a>
+          </span>
+          <span>
+            Email:
+            <a href="mailto:info@mularconstruct.xyz">
+              info@mularconstruct.xyz
+            </a>
+          </span>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Simple script to keep the year current
+    (function () {
+      var y = new Date().getFullYear();
+      document.getElementById("year").textContent = y;
+    })();
+  </script>
+</body>
+</html>
